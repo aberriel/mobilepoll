@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/enquetemobile?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">AQ-10.07-lr</property>
+    <property name="hibernate.show_sql">true</property>
+    <mapping class="mobilepoll.database.repository.model.City" />
+    <mapping class="mobilepoll.database.repository.model.FederalUnity" />
+    <mapping class="mobilepoll.database.repository.model.Superscription" />
+    <mapping class="mobilepoll.database.repository.model.AddressType" />
+  </session-factory>
+</hibernate-configuration>

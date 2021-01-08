@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">MobilePoll</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!-- Network Error -->
+    <string name="network_error_popup_title">Falha na conexão.</string>
+    <string name="network_error_popup_message">Não foi detectada conexão com a internet. Verifique as definições de rede.</string>
+    <string name="network_error_popup_yes">Abrir as configurações do dispositivo</string>
+    <string name="network_error_popup_no">Cancelar</string>
+
+
+    <!-- Logout -->
+    <string name="logout_popup_title">Confirmação de Saída</string>
+    <string name="logout_popup_message">Deseja realmente sair?</string>
+    <string name="logout_popup_yes">Sim</string>
+    <string name="logout_popup_no">Cancelar</string>
+
+
+    <!-- Quit confirm dialog definitions -->
+    <string name="quit_confirm_title">Confirmar Saída</string>
+    <string name="quit_confirm_message">Deseja realmente sair?</string>
+    <string name="quit_confirm_yes">Sim</string>
+    <string name="quit_confirm_no">Cancelar</string>
+
+
+    <!-- Login Activity -->
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="login_field_label">Usuário</string>
+    <string name="login_field_hint">Usuário</string>
+    <string name="password_field_label">Senha</string>
+    <string name="password_field_hint">Senha do usuário fornecido</string>
+    <string name="action_sign_in_short">Entrar</string>
+    <string name="login_error_popup_title">Erro!</string>
+    <string name="login_error_popup_message1">Falha na autenticação. Deseja iniciar a recuperação de senha?</string>
+    <string name="login_error_popup_message2">Dados incorretos. Favor verificar.</string>
+    <string name="login_error_popup_yes1">Sim</string>
+    <string name="login_error_popup_yes2">OK</string>
+    <string name="login_error_popup_no">Tentar Novamente!</string>
+    <string name="login_button">Entrar</string>
+    <string name="register_button">Cadastrar</string>
+    <string name="error_invalid_login">Usuário inválido.</string>
+    <string name="error_invalid_password">A senha é muito curta</string>
+    <string name="error_incorrect_password">Senha incorreta</string>
+    <string name="error_field_required">Campo obrigatório</string>
+
+
+    <!-- External Contact Activity -->
+    <string name="title_activity_contact">ContactActivity</string>
+    <string name="contact_hello_message">Tela de contato com os administradores.</string>
+
+
+    <!-- Internal Contact Activity -->
+
+    <!-- Internal Main -->
+    <string name="title_activity_internal_main">InternalMainActivity</string>
+    <string name="internal_main_hello_message">Tela principal interna</string>
+
+    <!-- About Activity -->
+    <string name="title_activity_about">AboutActivity</string>
+
+
+    <!-- External Configuration Activity -->
+    <string name="title_activity_configuration">ConfigurationActivity</string>
+
+
+    <!-- Internal Configuration Activity -->
+    <string name="title_activity_internal_configuration">InternalConfigurationActivity</string>
+
+
+    <!-- Research List Activity -->
+    <string name="title_activity_research_list">ResearchListActivity</string>
+
+    
+    <!-- Research Details Activity -->
+    <string name="title_activity_research_details">ResearchDetailsActivity</string>
+
+
+    <!-- Register Activity -->
+    <string name="title_activity_register">RegisterActivity</string>
+
+
+    <!-- Password Recovery Register -->
+    <string name="title_activity_password_recovery">PasswordRecoveryActivity</string>
+    <string name="redirect_error_popup_title">Erro!</string>
+    <string name="redirect_error_popup_message">Esta tela não pode ser acessada por este caminho. Clique em OK para ir para a tela inicial.</string>
+    <string name="redirect_error_popup_ok">OK</string>
+</resources>

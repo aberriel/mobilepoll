@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>EnqueteMobile Web - Cadastro</title>
+                <link rel="stylesheet" type="text/css" href="../Styles/mobilepoll.css" />
+            </f:facet>
+        </h:head>
+        <h:body id="pageBody">
+            <h:form>
+                <p:growl id="globalGrowl" showDetail="true" sticky="true" />
+                <p:layout fullPage="true">
+                    <p:layoutUnit id="headerPanel" position="north" size="100" resizable="true" closable="true" collapsible="true">
+                        EnqueteMobile Web
+                    </p:layoutUnit>
+                    <p:layoutUnit id="navBarPanel" position="west" size="175" header="Left" collapsible="true">
+                        <ui:include src="../templates/externalnavigationpanel.xhtml" />
+                    </p:layoutUnit>
+                    <p:layoutUnit id="contentPanel" position="center">
+                        <p:tabView id="tabViewRegistration">
+                            <p:tab title="Cadastro Pessoa Física" id="tabPhysicalPersonRegistration" >
+                                <p:wizard id="wizardPhysicalPersonRegistration" flowListener="#{registrationView.onFlowProcess}">
+                                    <p:tab id="tabPersonalData" title="Dados Pessoais">
+                                        <p:panel header="Dados Pessoais">
+                                            <p:messages />
+                                            <h:panelGrid columns="2" columnClasses="label, value">
+                                                <h:outputText value="Nome:" />
+                                            </h:panelGrid>
+                                        </p:panel>
+                                    </p:tab>
+                                    <p:tab id="tabAddress" title="Endereço"></p:tab>
+                                    <p:tab id="tabContact" title="Contato"></p:tab>
+                                    <p:tab id="tabCredentials" title="Credenciais"></p:tab>
+                                    <p:tab id="tabConfirm" title="Confirmação"></p:tab>
+                                </p:wizard>
+                            </p:tab>
+                            <p:tab title="Cadastro Pessoa Jurídica" id="tabJuridicalPersonRegistration">
+                                <p:wizard id="wizardJuridicalPersonRegistration" flowListener="#{registrationView.onFlowProcess}">
+                                    <p:tab id="tabJuridicalData" title="Dados da Empresa"></p:tab>
+                                    <p:tab id="tabPersonalData" title="Dados Pessoais"></p:tab>
+                                    <p:tab id="tabAddress" title="Endereço"></p:tab>
+                                    <p:tab id="tabContact" title="Contato"></p:tab>
+                                    <p:tab id="tabCredentials" title="Credenciais"></p:tab>
+                                    <p:tab id="tabConfirm" title="Confirmação"></p:tab>
+                                </p:wizard>
+                            </p:tab>
+                        </p:tabView>
+                    </p:layoutUnit>
+                    <p:layoutUnit id="footerPanel" position="south" size="100" closable="true" collapsible="true">
+                        <ui:include src="/templates/externalnavigationpanel.xhtml" />
+                    </p:layoutUnit>
+                </p:layout>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>

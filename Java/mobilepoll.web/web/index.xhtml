@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>EnqueteMobile Web</title>
+                <link rel="stylesheet" type="text/css" href="Styles/mobilepoll.css" />
+            </f:facet>
+        </h:head>
+        <h:body id="pageBody">
+            <h:form>
+                <p:dialog modal="false" header="Selecione o tipo de registro" widgetVar="dlgRegister" minHeight="60">
+                    <h:outputLabel for="cmbRegisterType" value="Selecione o tipo de registro:" /><br /><br />
+                    <h:selectOneMenu id="cmbRegisterType" value="#{registrationController.registerType}">
+                        <f:selectItem itemLabel="Selecione Um" itemValue="" />
+                        <f:selectItem itemLabel="Pessoa Física" itemValue="physical" />
+                        <f:selectItem itemLabel="Pessoa Jurídica" itemValue="juridical" />
+                    </h:selectOneMenu>
+
+                    <br /><br />
+                    <p:commandButton value="OK" id="btnInitRegistrationWizard" actionListener="#{registrationController.initRegistrationWizard()}" icon="ui-icon-check" update="globalGrowl" />
+                </p:dialog>
+                
+                <p:growl id="globalGrowl" showDetail="true" sticky="true" />
+                <p:layout fullPage="true">
+                    <p:layoutUnit id="headerPanel" position="north" size="100" resizable="true" closable="true" collapsible="true">
+                        <p:layout>
+                            <p:layoutUnit styleClass="ui-layout-unit" id="headerLeftPanel" position="west" size="850">
+                                EnqueteMobile Web
+                            </p:layoutUnit>
+                            <p:layoutUnit styleClass="ui-layout-unit" id="headerRightPanel" position="center">
+                                <p:commandLink id="lnkLogin" value="Entrar">
+                                    <h:outputText value="Entrar" />
+                                </p:commandLink>
+                                
+                                | 
+                                <p:commandLink id="lnkRegister" onclick="PF('dlgRegister').show();" value="Registrar">
+                                    <h:outputText value="Registrar" />
+                                </p:commandLink>
+                            </p:layoutUnit>
+                        </p:layout>
+                    </p:layoutUnit>
+                    <p:layoutUnit id="navBarPanel" position="west" size="175" header="Left" collapsible="true">
+                        <ui:include src="/templates/externalnavigationpanel.xhtml" />
+                    </p:layoutUnit>
+                    <p:layoutUnit id="contentPanel" position="center">
+                        Bem-vindo ao EnqueteMobile, sua solução completa para pesquisas de opinião.
+                    </p:layoutUnit>
+                    <p:layoutUnit id="footerPanel" position="south" size="100" closable="true" collapsible="true">
+                        <ui:include src="/templates/externalfooter.xhtml" />
+                    </p:layoutUnit>
+                </p:layout>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>

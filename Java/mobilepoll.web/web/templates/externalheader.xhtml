@@ -1,0 +1,53 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <p:layout>
+        <p:layoutUnit styleClass="ui-layout-unit" id="headerLeftPanel" position="west" size="850">
+            EnqueteMobile Web
+        </p:layoutUnit>
+        <p:layoutUnit styleClass="ui-layout-unit" id="headerRightPanel" position="center">
+            <p:commandLink id="lnkLogin" value="Entrar">
+                <h:outputText value="Entrar" />
+            </p:commandLink>
+            | 
+            <p:commandLink id="lnkRegister" onclick="PF('dlgRegister').show();" value="Registrar">
+                <h:outputText value="Registrar" />
+            </p:commandLink>
+            
+            <p:dialog modal="false" appendTo="@(body)" header="Selecione o tipo de registro" widgetVar="dlgRegister" minHeight="60">
+<!--                <h:outputLabel for="cmbRegisterType" value="Selecione o tipo de registro:" /><br /><br />
+                <h:selectOneMenu id="cmbRegisterType" value="#{registrationController.registerType}">
+                    <f:selectItem itemLabel="Selecione Um" itemValue="" />
+                    <f:selectItem itemLabel="Pessoa Física" itemValue="physical" />
+                    <f:selectItem itemLabel="Pessoa Jurídica" itemValue="juridical" />
+                </h:selectOneMenu>
+                
+                <br /><br />
+                <p:commandButton value="OK" id="btnInitRegistrationWizard" actionListener="" icon="ui-icon-check" update="globalGrowl" />-->
+
+                <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                    <h:outputText value="I accept terms and conditions: " />
+                    <p:selectBooleanButton id="value1" value="#{registrationController.value1}" onLabel="Yes" offLabel="No" style="width:60px">
+                        <p:ajax update="display" listener="#{registrationController.invertValue1()}" />
+                    </p:selectBooleanButton>
+                    
+                    <h:outputText value="Subscribe me to newsletter: " />
+                    <p:selectBooleanButton id="value2" value="#{registrationController.value2}" onLabel="Yes" offLabel="No" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:60px">
+                        <p:ajax update="display" listener="#{registrationController.invertValue2()}" />
+                    </p:selectBooleanButton>
+                </h:panelGrid>
+ 
+                <p:commandButton id="submit" value="Submit" update="display" icon="ui-icon-check" oncomplete="PF('dlg').show()" />
+            </p:dialog>
+            
+            <p:dialog modal="true" appendTo="@(body)" header="Resultado do compoente" id="dialog" resizable="false" showEffect="fade" widgetVar="dlg">
+                <h:panelGrid columns="1" id="display">
+                    <h:outputText value="Value 1: #{registrationController.value1}" />
+                    <h:outputText value="Value 2: #{registrationController.value2}" />
+                </h:panelGrid>
+            </p:dialog>
+        </p:layoutUnit>
+    </p:layout>
+</ui:composition>

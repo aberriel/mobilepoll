@@ -1,0 +1,11 @@
+.headerInnerPanel
+{
+    overflow: hidden;
+    border: none;
+}
+
+.ui-widget-content .ui-layout-unit .ui-layout-unit-content
+{
+    border: 0px none;
+    overflow: auto;
+}
